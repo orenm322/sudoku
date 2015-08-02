@@ -1,0 +1,194 @@
+<html><body>
+
+<h1>Sudoku Solver</h1>
+<p>
+<b>Instructions:</b> Input the Sudoku puzzle as it's given to you, then click Solve to see the solution.<br>
+(Note: this solver assumes that you input a valid initial puzzle. Otherwise you can get false solution)
+</p>
+<form name="frm" method="post" target="result" action="sudoku.php"><input type="hidden" name="submitted" /><table border='1'>
+<tr>
+<td>
+<table border='1'>
+<tr>
+<td><input type='hidden' name='hid[]' value='11' /><input type='text' size='1' maxlength='1' name='txt_11' /></td>
+<td><input type='hidden' name='hid[]' value='12' /><input type='text' size='1' maxlength='1' name='txt_12' /></td>
+<td><input type='hidden' name='hid[]' value='13' /><input type='text' size='1' maxlength='1' name='txt_13' /></td>
+</tr>
+<tr>
+<td><input type='hidden' name='hid[]' value='21' /><input type='text' size='1' maxlength='1' name='txt_21' /></td>
+<td><input type='hidden' name='hid[]' value='22' /><input type='text' size='1' maxlength='1' name='txt_22' /></td>
+<td><input type='hidden' name='hid[]' value='23' /><input type='text' size='1' maxlength='1' name='txt_23' /></td>
+</tr>
+<tr>
+<td><input type='hidden' name='hid[]' value='31' /><input type='text' size='1' maxlength='1' name='txt_31' /></td>
+<td><input type='hidden' name='hid[]' value='32' /><input type='text' size='1' maxlength='1' name='txt_32' /></td>
+<td><input type='hidden' name='hid[]' value='33' /><input type='text' size='1' maxlength='1' name='txt_33' /></td>
+</tr>
+</table>
+</td>
+<td>
+<table border='1'>
+<tr>
+<td><input type='hidden' name='hid[]' value='14' /><input type='text' size='1' maxlength='1' name='txt_14' /></td>
+<td><input type='hidden' name='hid[]' value='15' /><input type='text' size='1' maxlength='1' name='txt_15' /></td>
+<td><input type='hidden' name='hid[]' value='16' /><input type='text' size='1' maxlength='1' name='txt_16' /></td>
+</tr>
+<tr>
+<td><input type='hidden' name='hid[]' value='24' /><input type='text' size='1' maxlength='1' name='txt_24' /></td>
+<td><input type='hidden' name='hid[]' value='25' /><input type='text' size='1' maxlength='1' name='txt_25' /></td>
+<td><input type='hidden' name='hid[]' value='26' /><input type='text' size='1' maxlength='1' name='txt_26' /></td>
+</tr>
+<tr>
+<td><input type='hidden' name='hid[]' value='34' /><input type='text' size='1' maxlength='1' name='txt_34' /></td>
+<td><input type='hidden' name='hid[]' value='35' /><input type='text' size='1' maxlength='1' name='txt_35' /></td>
+<td><input type='hidden' name='hid[]' value='36' /><input type='text' size='1' maxlength='1' name='txt_36' /></td>
+</tr>
+</table>
+</td>
+<td>
+<table border='1'>
+<tr>
+<td><input type='hidden' name='hid[]' value='17' /><input type='text' size='1' maxlength='1' name='txt_17' /></td>
+<td><input type='hidden' name='hid[]' value='18' /><input type='text' size='1' maxlength='1' name='txt_18' /></td>
+<td><input type='hidden' name='hid[]' value='19' /><input type='text' size='1' maxlength='1' name='txt_19' /></td>
+</tr>
+<tr>
+<td><input type='hidden' name='hid[]' value='27' /><input type='text' size='1' maxlength='1' name='txt_27' /></td>
+<td><input type='hidden' name='hid[]' value='28' /><input type='text' size='1' maxlength='1' name='txt_28' /></td>
+<td><input type='hidden' name='hid[]' value='29' /><input type='text' size='1' maxlength='1' name='txt_29' /></td>
+</tr>
+<tr>
+<td><input type='hidden' name='hid[]' value='37' /><input type='text' size='1' maxlength='1' name='txt_37' /></td>
+<td><input type='hidden' name='hid[]' value='38' /><input type='text' size='1' maxlength='1' name='txt_38' /></td>
+<td><input type='hidden' name='hid[]' value='39' /><input type='text' size='1' maxlength='1' name='txt_39' /></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table border='1'>
+<tr>
+<td><input type='hidden' name='hid[]' value='41' /><input type='text' size='1' maxlength='1' name='txt_41' /></td>
+<td><input type='hidden' name='hid[]' value='42' /><input type='text' size='1' maxlength='1' name='txt_42' /></td>
+<td><input type='hidden' name='hid[]' value='43' /><input type='text' size='1' maxlength='1' name='txt_43' /></td>
+</tr>
+<tr>
+<td><input type='hidden' name='hid[]' value='51' /><input type='text' size='1' maxlength='1' name='txt_51' /></td>
+<td><input type='hidden' name='hid[]' value='52' /><input type='text' size='1' maxlength='1' name='txt_52' /></td>
+<td><input type='hidden' name='hid[]' value='53' /><input type='text' size='1' maxlength='1' name='txt_53' /></td>
+</tr>
+<tr>
+<td><input type='hidden' name='hid[]' value='61' /><input type='text' size='1' maxlength='1' name='txt_61' /></td>
+<td><input type='hidden' name='hid[]' value='62' /><input type='text' size='1' maxlength='1' name='txt_62' /></td>
+<td><input type='hidden' name='hid[]' value='63' /><input type='text' size='1' maxlength='1' name='txt_63' /></td>
+</tr>
+</table>
+</td>
+<td>
+<table border='1'>
+<tr>
+<td><input type='hidden' name='hid[]' value='44' /><input type='text' size='1' maxlength='1' name='txt_44' /></td>
+<td><input type='hidden' name='hid[]' value='45' /><input type='text' size='1' maxlength='1' name='txt_45' /></td>
+<td><input type='hidden' name='hid[]' value='46' /><input type='text' size='1' maxlength='1' name='txt_46' /></td>
+</tr>
+<tr>
+<td><input type='hidden' name='hid[]' value='54' /><input type='text' size='1' maxlength='1' name='txt_54' /></td>
+<td><input type='hidden' name='hid[]' value='55' /><input type='text' size='1' maxlength='1' name='txt_55' /></td>
+<td><input type='hidden' name='hid[]' value='56' /><input type='text' size='1' maxlength='1' name='txt_56' /></td>
+</tr>
+<tr>
+<td><input type='hidden' name='hid[]' value='64' /><input type='text' size='1' maxlength='1' name='txt_64' /></td>
+<td><input type='hidden' name='hid[]' value='65' /><input type='text' size='1' maxlength='1' name='txt_65' /></td>
+<td><input type='hidden' name='hid[]' value='66' /><input type='text' size='1' maxlength='1' name='txt_66' /></td>
+</tr>
+</table>
+</td>
+<td>
+<table border='1'>
+<tr>
+<td><input type='hidden' name='hid[]' value='47' /><input type='text' size='1' maxlength='1' name='txt_47' /></td>
+<td><input type='hidden' name='hid[]' value='48' /><input type='text' size='1' maxlength='1' name='txt_48' /></td>
+<td><input type='hidden' name='hid[]' value='49' /><input type='text' size='1' maxlength='1' name='txt_49' /></td>
+</tr>
+<tr>
+<td><input type='hidden' name='hid[]' value='57' /><input type='text' size='1' maxlength='1' name='txt_57' /></td>
+<td><input type='hidden' name='hid[]' value='58' /><input type='text' size='1' maxlength='1' name='txt_58' /></td>
+<td><input type='hidden' name='hid[]' value='59' /><input type='text' size='1' maxlength='1' name='txt_59' /></td>
+</tr>
+<tr>
+<td><input type='hidden' name='hid[]' value='67' /><input type='text' size='1' maxlength='1' name='txt_67' /></td>
+<td><input type='hidden' name='hid[]' value='68' /><input type='text' size='1' maxlength='1' name='txt_68' /></td>
+<td><input type='hidden' name='hid[]' value='69' /><input type='text' size='1' maxlength='1' name='txt_69' /></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table border='1'>
+<tr>
+<td><input type='hidden' name='hid[]' value='71' /><input type='text' size='1' maxlength='1' name='txt_71' /></td>
+<td><input type='hidden' name='hid[]' value='72' /><input type='text' size='1' maxlength='1' name='txt_72' /></td>
+<td><input type='hidden' name='hid[]' value='73' /><input type='text' size='1' maxlength='1' name='txt_73' /></td>
+</tr>
+<tr>
+<td><input type='hidden' name='hid[]' value='81' /><input type='text' size='1' maxlength='1' name='txt_81' /></td>
+<td><input type='hidden' name='hid[]' value='82' /><input type='text' size='1' maxlength='1' name='txt_82' /></td>
+<td><input type='hidden' name='hid[]' value='83' /><input type='text' size='1' maxlength='1' name='txt_83' /></td>
+</tr>
+<tr>
+<td><input type='hidden' name='hid[]' value='91' /><input type='text' size='1' maxlength='1' name='txt_91' /></td>
+<td><input type='hidden' name='hid[]' value='92' /><input type='text' size='1' maxlength='1' name='txt_92' /></td>
+<td><input type='hidden' name='hid[]' value='93' /><input type='text' size='1' maxlength='1' name='txt_93' /></td>
+</tr>
+</table>
+</td>
+<td>
+<table border='1'>
+<tr>
+<td><input type='hidden' name='hid[]' value='74' /><input type='text' size='1' maxlength='1' name='txt_74' /></td>
+<td><input type='hidden' name='hid[]' value='75' /><input type='text' size='1' maxlength='1' name='txt_75' /></td>
+<td><input type='hidden' name='hid[]' value='76' /><input type='text' size='1' maxlength='1' name='txt_76' /></td>
+</tr>
+<tr>
+<td><input type='hidden' name='hid[]' value='84' /><input type='text' size='1' maxlength='1' name='txt_84' /></td>
+<td><input type='hidden' name='hid[]' value='85' /><input type='text' size='1' maxlength='1' name='txt_85' /></td>
+<td><input type='hidden' name='hid[]' value='86' /><input type='text' size='1' maxlength='1' name='txt_86' /></td>
+</tr>
+<tr>
+<td><input type='hidden' name='hid[]' value='94' /><input type='text' size='1' maxlength='1' name='txt_94' /></td>
+<td><input type='hidden' name='hid[]' value='95' /><input type='text' size='1' maxlength='1' name='txt_95' /></td>
+<td><input type='hidden' name='hid[]' value='96' /><input type='text' size='1' maxlength='1' name='txt_96' /></td>
+</tr>
+</table>
+</td>
+<td>
+<table border='1'>
+<tr>
+<td><input type='hidden' name='hid[]' value='77' /><input type='text' size='1' maxlength='1' name='txt_77' /></td>
+<td><input type='hidden' name='hid[]' value='78' /><input type='text' size='1' maxlength='1' name='txt_78' /></td>
+<td><input type='hidden' name='hid[]' value='79' /><input type='text' size='1' maxlength='1' name='txt_79' /></td>
+</tr>
+<tr>
+<td><input type='hidden' name='hid[]' value='87' /><input type='text' size='1' maxlength='1' name='txt_87' /></td>
+<td><input type='hidden' name='hid[]' value='88' /><input type='text' size='1' maxlength='1' name='txt_88' /></td>
+<td><input type='hidden' name='hid[]' value='89' /><input type='text' size='1' maxlength='1' name='txt_89' /></td>
+</tr>
+<tr>
+<td><input type='hidden' name='hid[]' value='97' /><input type='text' size='1' maxlength='1' name='txt_97' /></td>
+<td><input type='hidden' name='hid[]' value='98' /><input type='text' size='1' maxlength='1' name='txt_98' /></td>
+<td><input type='hidden' name='hid[]' value='99' /><input type='text' size='1' maxlength='1' name='txt_99' /></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<input type="submit" value="Solve" />
+<input type="reset" value="Reset" /></form>
+
+<p><b>By Oren Mordechai</b></p>
+
+
+</body>
+</html>
